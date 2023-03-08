@@ -1,29 +1,19 @@
 package sorting;
 
 public class SelectionSort {
-    public static int[] intArray = {3, 1, 6, 4, 5, 7, 9, 8, 2};
+    public static int[] selectionSort(int numbers[]) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int abc = i;
+            for (int o = i + 1; o < numbers.length; o++) {
+                if (numbers[o] < numbers[abc])
+                    abc = o;
 
-    {
+                int smallNumber = numbers[abc];
+                numbers[abc] = numbers[i];
+                numbers[i] = smallNumber;
+            }
 
-        public static int[] selectionSort() {
-        int x, y;
-        for (int w = intArray.length - 1; w >= 1; w--) {
-            x = 0;
-            for (int j = 1; j <= w; j++) {
-                if (intArray[j] > intArray[x]) {
-                    w = j;
-                }
-            }
-            y = intArray[x];
-            intArray[x] = intArray[w];
-            intArray[w] = y;
         }
-        public static void main(String[]) {
-        int[] ausgabe = selectionSort();
-            for (int j = 0; j < intArray.length; j++) {
-                System.out.println(j + 1 + "= " + ausgabe[j]);
-            }
-        }
-    }
+        return numbers;
     }
 }
