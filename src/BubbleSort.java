@@ -17,9 +17,9 @@ public class BubbleSort {
         return intArray;
     }
     public static void main(String[] args) {
-        int[] ausgabe = BubbleSort.bubbleSort();
+        int[] liste = BubbleSort.bubbleSort();
         for (int w = 0; w < intArray.length; w++) {
-            System.out.println(w + 1 + "= " + ausgabe[w]);
+            System.out.println(w + 1 + "= " + liste[w]);
         }
     }
 }
