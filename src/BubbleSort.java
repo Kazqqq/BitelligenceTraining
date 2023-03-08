@@ -1,6 +1,6 @@
 public class BubbleSort {
 
-    public static int[] intArray = {88, 99, 564, 331, 3, 1, 4, 3, 2, 1, 2, 33, 1, 88, 77, 66, 54, 32, 123, 421};
+    public static int[] intArray = {3,1,6,4,5,7,9,8,2};
 
     public static int[] bubbleSort() {
         int q;
@@ -15,6 +15,12 @@ public class BubbleSort {
             bubbleSort();
         }
         return intArray;
+    }
+    public static void main(String[] args) {
+        int[] ausgabe = BubbleSort.bubbleSort();
+        for (int w = 0; w < intArray.length; w++) {
+            System.out.println(w + 1 + "= " + ausgabe[w]);
+        }
     }
 }
 
