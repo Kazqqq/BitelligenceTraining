@@ -16,4 +16,11 @@ public class SelectionSort {
         }
         return numbers;
     }
+    public static void main(String[] args) {
+        int[] numbers = {5, 2, 8, 3, 1};
+        int[] sortedNumbers = selectionSort(numbers);
+        for (int i = 0; i < sortedNumbers.length; i++) {
+            System.out.print(sortedNumbers[i] + " ");
+        }
+    }
 }
