@@ -2,30 +2,31 @@ package kgv;
 
 import java.util.Scanner;
 
-public class KGV {
+import java.util.Scanner;
 
+public class KGV {
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Wie lautet die erste Zahl? ");
-        int a = input.nextInt();
+        System.out.print("Gib die erste Zahl ein: ");
+        int n1 = input.nextInt();
 
-        System.out.print("Wie lautet die zweite Zahl? ");
-        int b = input.nextInt();
+        System.out.print("Gib die zweite Zahl ein: ");
+        int n2 = input.nextInt();
 
-        int kgv = 0;
-        int i = a;
+        int ggt = 1;
 
-        do {
-            if (i % b == 0) {
-                kgv = i;
-                break;
-            }
-            i += a;
-        } while (i <= a * b);
+        for(int i = 1; i <= n1 && i <= n2; ++i) {
+            // Überprüft ob i ein Faktor von n1 UND n2 ist
+            if(n1 % i == 0 && n2 % i == 0)
+                ggt = i;
+        }
 
-        System.out.println("Das kleinste gemeinsame Vielfache deiner beiden Zahlen beträgt: " +kgv);
+        int kgv = (n1 * n2) / ggt;
+        System.out.printf("Das kleinste gemeinsame Vielfache von %d und %d ist %d.", n1, n2, kgv);
 
         input.close();
     }
 }
+
