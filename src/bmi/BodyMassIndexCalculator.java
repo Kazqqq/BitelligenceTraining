@@ -13,30 +13,35 @@ public class BodyMassIndexCalculator {
         return bmi;
     }
 
-//    public enum BmiClassification {
-//        UNTERGEWICHTIG("Untergewichtig"),
-//        NORMALGEWICHT,
-//        UEBERGEWICHT,
-//        SCHWERES_UEBERGEWICHT;
-//
-//        private final String gewichtKlasse;
-//
-//        BmiClassification(String gewichtKlasse) {
-//            this.
-//        }
-//    }
 
-    public static String classifyBmi(double bmi) {
+
+    public static BmiClassEnum classifyBmi(double bmi) {
         if (bmi < 18.5) {
-            return "Untergewichtig";
+            return BmiClassEnum.UNTERGEWICHTIG;
         } else if (bmi < 25.0) {
-            return "Normalgewichtig";
+            return BmiClassEnum.NORMALGEWICHTIG;
         } else if (bmi < 30.0) {
-            return "Übergewichtig";
+            return BmiClassEnum.ÜBERGEWICHTIG;
         } else {
-            return "Schweres Übergewicht";
+            return BmiClassEnum.SCHWER_ÜBERGEWICHTIG;
         }
     }
+
+    enum BmiClassEnum {
+        UNTERGEWICHTIG(0, 18.5),
+        NORMALGEWICHTIG(18.5, 25),
+        ÜBERGEWICHTIG(25, 30),
+        SCHWER_ÜBERGEWICHTIG(30, 99);
+
+        double lower;
+        double upper;
+
+        BmiClassEnum(double lower, double upper) {
+            this.lower = lower;
+            this.upper = upper;
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -48,8 +53,8 @@ public class BodyMassIndexCalculator {
         int weight = scanner.nextInt();
 
         double bmi = berechneBmi(height, weight);
-        String bmiClass = classifyBmi(bmi);
+        BmiClassEnum bmiClassEnum = classifyBmi(bmi);
 
-        System.out.printf("Ihr BMI beträgt %.2f, dies gilt als %s\n", bmi, bmiClass);
+        System.out.printf("Ihr BMI beträgt %.2f, dies gilt als %s\n", bmi, bmiClassEnum);
     }
 }
