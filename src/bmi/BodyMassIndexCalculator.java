@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BodyMassIndexCalculator {
 
-    public static double calculateBmi(int heightInCentimeters, int weightInKilograms) {
+    public static double berechneBmi(int heightInCentimeters, int weightInKilograms) {
 
         double heightInMeters = heightInCentimeters / 100.0;
 
@@ -47,7 +47,7 @@ public class BodyMassIndexCalculator {
         System.out.print("Geben Sie Ihr Gewicht in kg an: ");
         int weight = scanner.nextInt();
 
-        double bmi = calculateBmi(height, weight);
+        double bmi = berechneBmi(height, weight);
         String bmiClass = classifyBmi(bmi);
 
         System.out.printf("Ihr BMI beträgt %.2f, dies gilt als %s\n", bmi, bmiClass);

@@ -10,17 +10,17 @@ public class BodyMassIndexCalculatorTest {
     public void testCalculateBmi() {
         // Test with values for a BMI of 22.22
         double expectedBmi = 22.22;
-        double actualBmi = BodyMassIndexCalculator.calculateBmi(170, 65);
+        double actualBmi = BodyMassIndexCalculator.berechneBmi(170, 65);
         assertEquals(expectedBmi, actualBmi, 0.01);
 
         // Test with values for a BMI of 29.58
         expectedBmi = 29.58;
-        actualBmi = BodyMassIndexCalculator.calculateBmi(170, 90);
+        actualBmi = BodyMassIndexCalculator.berechneBmi(170, 90);
         assertEquals(expectedBmi, actualBmi, 0.01);
 
         // Test with values for a BMI of 18.6
         expectedBmi = 18.6;
-        actualBmi = BodyMassIndexCalculator.calculateBmi(160, 45);
+        actualBmi = BodyMassIndexCalculator.berechneBmi(160, 45);
         assertEquals(expectedBmi, actualBmi, 0.01);
     }
 
