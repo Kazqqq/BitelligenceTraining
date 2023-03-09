@@ -2,8 +2,6 @@ package kgv;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class KGV {
     public static void main(String[] args) {
 
