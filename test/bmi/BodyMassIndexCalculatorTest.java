@@ -2,44 +2,45 @@ package bmi;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class BodyMassIndexCalculatorTest {
+class BodyMassIndexCalculatorTest {
 
     @Test
-    public void testCalculateBmi() {
-        // Test with values for a BMI of 22.22
-        double expectedBmi = 22.22;
-        double actualBmi = BodyMassIndexCalculator.berechneBmi(170, 65);
-        assertEquals(expectedBmi, actualBmi, 0.01);
+    void testCalculateBmi() {
+        // Test case 1: Normal weight BMI
+        double bmi = BodyMassIndexCalculator.berechneBmi(170, 70);
+        assertEquals(24.22, bmi, 0.01); // expected BMI is 24.22 with a tolerance of 0.01
 
-        // Test with values for a BMI of 29.58
-        expectedBmi = 29.58;
-        actualBmi = BodyMassIndexCalculator.berechneBmi(170, 90);
-        assertEquals(expectedBmi, actualBmi, 0.01);
+        // Test case 2: Underweight BMI
+        bmi = BodyMassIndexCalculator.berechneBmi(165, 50);
+        assertEquals(18.36, bmi, 0.01); // expected BMI is 18.36 with a tolerance of 0.01
 
-        // Test with values for a BMI of 18.6
-        expectedBmi = 18.6;
-        actualBmi = BodyMassIndexCalculator.berechneBmi(160, 45);
-        assertEquals(expectedBmi, actualBmi, 0.01);
+        // Test case 3: Overweight BMI
+        bmi = BodyMassIndexCalculator.berechneBmi(180, 90);
+        assertEquals(27.78, bmi, 0.01); // expected BMI is 27.78 with a tolerance of 0.01
+
+        // Test case 4: Obese BMI
+        bmi = BodyMassIndexCalculator.berechneBmi(160, 90);
+        assertEquals(35.16, bmi, 0.01); // expected BMI is 35.16 with a tolerance of 0.01
     }
 
     @Test
-    public void testClassifyBmi() {
-        // Test classification for BMI of 22.22
-        String expectedClassification = "Normalgewichtig";
-        String actualClassification = BodyMassIndexCalculator.classifyBmi(22.22);
-        assertEquals(expectedClassification, actualClassification);
+    void testClassifyBmi() {
+        // Test case 1: Normal weight classification
+        BodyMassIndexCalculator.BmiClassEnum bmiClass = BodyMassIndexCalculator.classifyBmi(24.22);
+        assertEquals(BodyMassIndexCalculator.BmiClassEnum.NORMALGEWICHTIG, bmiClass);
 
-        // Test classification for BMI of 29.58
-        expectedClassification = "Übergewichtig";
-        actualClassification = BodyMassIndexCalculator.classifyBmi(29.58);
-        assertEquals(expectedClassification, actualClassification);
+        // Test case 2: Underweight classification
+        bmiClass = BodyMassIndexCalculator.classifyBmi(18.36);
+        assertEquals(BodyMassIndexCalculator.BmiClassEnum.UNTERGEWICHTIG, bmiClass);
 
-        // Test classification for BMI of 18.6
-        expectedClassification = "Untergewichtig";
-        actualClassification = BodyMassIndexCalculator.classifyBmi(18.6);
-        assertEquals(expectedClassification, actualClassification);
+        // Test case 3: Overweight classification
+        bmiClass = BodyMassIndexCalculator.classifyBmi(27.78);
+        assertEquals(BodyMassIndexCalculator.BmiClassEnum.ÜBERGEWICHTIG, bmiClass);
+
+        // Test case 4: Obese classification
+        bmiClass = BodyMassIndexCalculator.classifyBmi(35.16);
+        assertEquals(BodyMassIndexCalculator.BmiClassEnum.SCHWER_ÜBERGEWICHTIG, bmiClass);
     }
 }
-
