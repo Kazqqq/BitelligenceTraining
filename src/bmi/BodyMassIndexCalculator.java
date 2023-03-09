@@ -4,30 +4,28 @@ import java.util.Scanner;
 
 public class BodyMassIndexCalculator {
 
-    /**
-     * Method to calculate the Body Mass Index.
-     * Formula: weight (kg) / (height (meters) * height (meters))
-     *
-     * @param heightInCentimeters - height in centimeters
-     * @param weightInKilograms   - weight in kilograms
-     * @return Body Mass Index
-     */
     public static double calculateBmi(int heightInCentimeters, int weightInKilograms) {
-        // convert height from centimeters to meters
+
         double heightInMeters = heightInCentimeters / 100.0;
 
-        // calculate BMI using formula
         double bmi = weightInKilograms / (heightInMeters * heightInMeters);
 
         return bmi;
     }
 
-    /**
-     * Method to classify BMI based on predefined ranges.
-     *
-     * @param bmi - Body Mass Index
-     * @return BMI classification as a String
-     */
+//    public enum BmiClassification {
+//        UNTERGEWICHTIG("Untergewichtig"),
+//        NORMALGEWICHT,
+//        UEBERGEWICHT,
+//        SCHWERES_UEBERGEWICHT;
+//
+//        private final String gewichtKlasse;
+//
+//        BmiClassification(String gewichtKlasse) {
+//            this.
+//        }
+//    }
+
     public static String classifyBmi(double bmi) {
         if (bmi < 18.5) {
             return "Untergewichtig";
@@ -40,11 +38,9 @@ public class BodyMassIndexCalculator {
         }
     }
 
-    // Example usage
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // prompt user to enter height and weight
         System.out.print("Geben Sie Ihre Größe in cm an: ");
         int height = scanner.nextInt();
 
@@ -54,7 +50,6 @@ public class BodyMassIndexCalculator {
         double bmi = calculateBmi(height, weight);
         String bmiClass = classifyBmi(bmi);
 
-        // output BMI result and classification
         System.out.printf("Ihr BMI beträgt %.2f, dies gilt als %s\n", bmi, bmiClass);
     }
 }
