@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MergeSort {
 
     // die sort methode teilt rekursiv den input array in der hälfte und merged sie
-    public int[] sort(int[] numbers) {
+    public int[] sort(final int[] numbers) {
 
         // Falls die Länge des arrays größer als 1 ist, teilt er ihn in der Hälfte und sortiert jede Hälfte für sich
         if (numbers.length > 1) {
@@ -34,7 +34,7 @@ public class MergeSort {
         // Initialisierung von countern für den linken, rechten und kombinierten bzw. merged Array
         int i = 0, j = 0, k = 0;
 
-        // Iteriert über beode Arrays und added das kleinste Element zum merged Arrya
+        // Iteriert über beide Arrays und added das kleinste Element zum merged Array
         while (i < left.length && j < right.length) {
             if (left[i] <= right[j]) {
                 numbers[k] = left[i];
