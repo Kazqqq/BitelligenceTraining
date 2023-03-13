@@ -3,9 +3,9 @@ package serializable;
 import java.io.Serializable;
 
 public class Sheep implements Serializable {
-    String name;
-    int alter;
-    boolean geschoren;
+    private String name;
+    private int alter;
+    private boolean geschoren;
 
     public Sheep () {
 
