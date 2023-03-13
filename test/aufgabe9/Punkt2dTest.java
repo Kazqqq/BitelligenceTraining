@@ -18,11 +18,11 @@ class Punkt2dTest {
 
     @Test
     void subtrahieren() {
-        Punkt2d testPoint3 = new Punkt2d(3.0, 9.5);
+        Punkt2d testPoint3 = new Punkt2d(4.0, 9.5);
         Punkt2d testPoint4 = new Punkt2d(3.9, 8.5);
         Punkt2d subTestResult = testPoint3.subtrahieren(testPoint4);
 
-        assertEquals(subTestResult.getX(), 0.9,0.01);
+        assertEquals(subTestResult.getX(), 0.1,0.01);
         assertEquals(subTestResult.getY(), 1,0.01);
     }
 
