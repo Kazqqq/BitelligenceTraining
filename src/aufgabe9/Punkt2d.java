@@ -55,28 +55,5 @@ public class Punkt2d {
         return "Unser Punkt liegt auf den Koordinaten: " + x + ("x, ") + y + " y.";
     }
 
-//    public static void main(String[] args) {
-//        Scanner eingabe = new Scanner(System.in);
-//
-//        //Koordinaten eingeben
-//        System.out.print("Ztagen die die Koordinaten für A ein ");
-//    }
-
-    public static void main(String[] args) {
-        Punkt2d punktA = new Punkt2d(7.0, 4.0);
-        Punkt2d punktB = new Punkt2d(9.0, 13.0);
-
-        System.out.println("Punkt A: " + punktA);
-        System.out.println("Punkt B: " + punktB);
-
-        punktA.addieren(punktB);
-        System.out.println("Addiert: " + punktA);
-        punktA.subtrahieren(punktB);
-        System.out.println("Subtrahiert: " + punktA);
-        punktA.dividieren(punktB);
-        System.out.println("Dividiert: " + punktA);
-        punktA.multiplizieren(punktB);
-        System.out.println("Multipliziert: " + punktA);
-    }
 }
 
