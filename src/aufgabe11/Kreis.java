@@ -1,16 +1,23 @@
 package aufgabe11;
 
-public abstract class Kreis implements GeometrischesObjekt {
+public class Kreis implements GeometrischesObjekt {
+    private double radius;
 
-    double radius;
-    double pi;
+    public Kreis(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
     @Override
     public double berechneUmfang() {
-        return 0;
+        return 2 * Math.PI * radius;
     }
 
     @Override
     public double berechneFlaeche() {
-        return pi * radius;
+        return Math.PI * radius * radius;
     }
 }
