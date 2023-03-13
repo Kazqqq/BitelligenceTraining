@@ -36,6 +36,10 @@ public class Vektor {
         this.z = z;
     }
 
+    public Vektor() {
+
+    }
+
     public Vektor addieren(Vektor vektor) {
         return new Vektor(x + vektor.x, y + vektor.y, z + vektor.z);
     }
@@ -49,7 +53,7 @@ public class Vektor {
     }
 
     public Vektor skalarMultiply(double s) {
-        return new Vektor(s * x, s + y, s + z);
+        return new Vektor(s * x, s * y, s * z);
     }
 
     public Vektor skalarProdukt(Vektor vektor) {
