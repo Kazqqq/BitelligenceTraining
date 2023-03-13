@@ -27,27 +27,32 @@ public class Punkt2d {
     }
 
     // Addieren
-    public void addieren(Punkt2d punkt2d) {
+    public Punkt2d addieren(Punkt2d punkt2d) {
         this.x += punkt2d.getX();
         this.y += punkt2d.getY();
+
+        return this;
     }
 
     // Subtrahieren
-    public void subtrahieren(Punkt2d punkt2d) {
+    public Punkt2d subtrahieren(Punkt2d punkt2d) {
         this.x -= punkt2d.getX();
         this.y -= punkt2d.getY();
+        return this;
     }
 
     // Dividieren
-    public void dividieren(Punkt2d punkt2d) {
+    public Punkt2d dividieren(Punkt2d punkt2d) {
         this.x /= punkt2d.getX();
         this.y /= punkt2d.getY();
+        return this;
     }
 
     // Multiplizieren
-    public void multiplizieren(Punkt2d punkt2d) {
+    public Punkt2d multiplizieren(Punkt2d punkt2d) {
         this.x *= punkt2d.getX();
         this.y *= punkt2d.getY();
+        return this;
     }
 
     // toString
