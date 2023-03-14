@@ -27,6 +27,8 @@ public class Punkt2d {
         this.y = y;
     }
 
+
+    // Kalkulation's Methoden
     public void add(Punkt2d punkt){
         this.x += punkt.x;
         this.y += punkt.y;

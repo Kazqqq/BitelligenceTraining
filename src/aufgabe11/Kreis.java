@@ -1,7 +1,7 @@
 package aufgabe11;
 
 public class Kreis implements GeometrischesObjekt {
-    private double radius;
+    private final double radius;
 
     public Kreis(double radius) {
         this.radius = radius;
@@ -11,11 +11,15 @@ public class Kreis implements GeometrischesObjekt {
         return radius;
     }
 
+
+    // Formel für Berechnung Umfang
     @Override
     public double berechneUmfang() {
         return 2 * Math.PI * radius;
     }
 
+
+    // Formel für Berechnung Fläche
     @Override
     public double berechneFlaeche() {
         return Math.PI * radius * radius;

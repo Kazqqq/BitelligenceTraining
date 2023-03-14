@@ -22,6 +22,7 @@ public class Rechteck implements GeometrischesObjekt {
     }
 
 
+    // Formeln
     @Override
     public double berechneUmfang() {
         return 2 * (getSeiteA() + getSeiteB());

@@ -15,6 +15,8 @@ public class Dreieck implements GeometrischesObjekt {
         this.c = c;
     }
 
+
+    // Formel für Berechnung Umfang
     @Override
     public double berechneUmfang() {
         double seiteA = a.distance(b);
@@ -23,6 +25,7 @@ public class Dreieck implements GeometrischesObjekt {
         return seiteA + seiteB + seiteC;
     }
 
+    // Formel für Berechnung Fläche
     @Override
     public double berechneFlaeche() {
         double seiteA = a.distance(b);
@@ -32,6 +35,7 @@ public class Dreieck implements GeometrischesObjekt {
         return Math.sqrt(s * (s - seiteA) * (s - seiteB) * (s - seiteC));
     }
 
+    // Formel für Berechnung Höhe
     public double berechneHoehe() {
         double seiteB = b.distance(c);
         double flaeche = berechneFlaeche();
