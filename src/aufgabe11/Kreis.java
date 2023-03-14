@@ -1,6 +1,6 @@
 package aufgabe11;
 
-public class Kreis implements GeometrischesObjekt {
+public class Kreis extends GeometrischesObjekt {
     private final double radius;
 
     public Kreis(double radius) {

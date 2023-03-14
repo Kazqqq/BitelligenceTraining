@@ -1,9 +1,8 @@
 package aufgabe11;
 
 import aufgabe9.Punkt2d;
-import aufgabe9.Punkt2dUtility;
 
-public class Dreieck implements GeometrischesObjekt {
+public class Dreieck extends GeometrischesObjekt {
 
     private Punkt2d a;
     private Punkt2d b;
