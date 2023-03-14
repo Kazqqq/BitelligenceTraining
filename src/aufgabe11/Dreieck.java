@@ -1,43 +1,41 @@
 package aufgabe11;
 
+import aufgabe9.Punkt2d;
+import aufgabe9.Punkt2dUtility;
+
 public class Dreieck implements GeometrischesObjekt {
-    private double seiteA;
-    private double seiteB;
-    private double seiteC;
 
-    public Dreieck(double seiteA, double seiteB, double seiteC) {
-        this.seiteA = seiteA;
-        this.seiteB = seiteB;
-        this.seiteC = seiteC;
-    }
+    private Punkt2d a;
+    private Punkt2d b;
+    private Punkt2d c;
 
-    public double getSeiteA() {
-        return seiteA;
-    }
-
-    public double getSeiteB() {
-        return seiteB;
-    }
-
-    public double getSeiteC() {
-        return seiteC;
+    public Dreieck(Punkt2d a, Punkt2d b, Punkt2d c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     @Override
     public double berechneUmfang() {
+        double seiteA = a.distance(b);
+        double seiteB = b.distance(c);
+        double seiteC = c.distance(a);
         return seiteA + seiteB + seiteC;
     }
 
     @Override
     public double berechneFlaeche() {
+        double seiteA = a.distance(b);
+        double seiteB = b.distance(c);
+        double seiteC = c.distance(a);
         double s = (seiteA + seiteB + seiteC) / 2;
         return Math.sqrt(s * (s - seiteA) * (s - seiteB) * (s - seiteC));
     }
+
     public double berechneHoehe() {
-        double s = (seiteA + seiteB + seiteC) / 2;
-        return (2 * Math.sqrt(s * (s - seiteA) * (s - seiteB) * (s - seiteC))) / seiteB;
+        double seiteB = b.distance(c);
+        double flaeche = berechneFlaeche();
+        return 2 * flaeche / seiteB;
     }
 
 }
-
-
